@@ -259,4 +259,18 @@ public class PowerSchool {
             conn.setAutoCommit(false);
             stmt.setString(1, Utils.getHash(newPassword));
             stmt.setString(2, username);
+
+          if (stmt.executeUpdate() == 1) {
+                conn.commit();
+                return 1;
+            } else {
+                conn.rollback();
+                return -1;
+            }
+           
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+            return -1;
+        }
     }
