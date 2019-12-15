@@ -11,8 +11,6 @@ public class Student extends User {
     private double gpa;
     private String firstName;
     private String lastName;
-    
-}
 
     public Student(User user, ResultSet rs) throws SQLException {
     	super(user);
@@ -25,3 +23,35 @@ public class Student extends User {
     	this.firstName = rs.getString("first_name");
     	this.lastName = rs.getString("last_name");
     }
+    
+    public int getStudentId() {
+    	return studentId;
+    }
+    
+    public int getClassRank() {
+    	return classRank;
+    }
+    
+    public int getGradeLevel() {
+    	return gradeLevel;
+    }
+    
+    public int getGraduationYear() {
+    	return graduationYear;
+    }
+    
+    public double getGpa() {
+    	return gpa;
+    }
+    
+    public String getFirstName() {
+    	return firstName;
+    }
+    
+    public String getLastName() {
+    	return lastName;
+    }
+    
+    
+	
+}
