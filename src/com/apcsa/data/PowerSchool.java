@@ -311,4 +311,26 @@ public class PowerSchool {
     	return resultList;
     }
  
+     public static ArrayList<String> getCourseName(User activeUser, ArrayList<Integer> courseIds) {
+    	ArrayList<String> courses = new ArrayList<String>();
+     	try (Connection conn = getConnection();
+     			PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_COURSE_NAME)) {
+     			for(int i = 0; i <= courseIds.size()-1; i++) {
+     				stmt.setInt(1, courseIds.get(i));
+     				
+     				try (ResultSet rs = stmt.executeQuery()) {
+     					while (rs.next()) {
+                  		   String result = rs.getString("title");
+                  		   courses.add(result);
+     					}
+     				}
+     			}
+     			return courses;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+     	return courses;
+     }
+            
+            
 }
