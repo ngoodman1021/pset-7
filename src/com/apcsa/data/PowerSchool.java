@@ -290,5 +290,25 @@ public class PowerSchool {
 
            return "root";
     }
-            
- }
+    
+    public static ArrayList<Integer> getCourseId(User activeUser) {
+    	ArrayList<Integer> resultList = new ArrayList<Integer>();
+    	try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_COURSE_ID)) {
+    		stmt.setInt(1, activeUser.getUserId());
+
+    		try (ResultSet rs = stmt.executeQuery()) {
+        	   while (rs.next()) {
+        		   int result = rs.getInt("course_id");
+        		   resultList.add(result);
+        	   }
+        	   return resultList;
+        	   
+    		}
+    	} catch (SQLException e) {
+    		e.printStackTrace();
+        }
+    	return resultList;
+    }
+ 
+}
