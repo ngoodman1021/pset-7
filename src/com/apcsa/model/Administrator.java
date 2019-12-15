@@ -20,8 +20,22 @@ public class Administrator extends User {
     	this.firstName = rs.getString("first_name");
     	this.lastName = rs.getString("last_name");
     	this.jobTitle = rs.getString("job_title");
-	
     }
+	
+    ublic int getAdministratorId() {
+    	return administratorId;
+    }
+    
+    public String getFirstName() {
+    	return firstName;
+    }
+    
+    public String getLastName() {
+    	return lastName;
+    }
+    public String getJobTitle() {
+    	return jobTitle;
+ }
 
     
 
