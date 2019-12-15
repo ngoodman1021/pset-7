@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import com.apcsa.controller.Utils;
 import com.apcsa.model.Administrator;
@@ -250,3 +251,12 @@ public class PowerSchool {
         }
     }
 }
+
+        public static int updatePassword(String username, String newPassword) {
+        try (Connection conn = getConnection();
+        	 PreparedStatement stmt = conn.prepareStatement(QueryUtils.UPDATE_STUDENT_PASSWORD)) {
+
+            conn.setAutoCommit(false);
+            stmt.setString(1, Utils.getHash(newPassword));
+            stmt.setString(2, username);
+    }
