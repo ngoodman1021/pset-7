@@ -64,6 +64,47 @@ public class Application {
             }
         }
     }
+	
+	 public void createAndShowUI() {
+    	System.out.println("\nHello, again, " + activeUser.getFirstName() + "!\n");
+    	
+    	if(activeUser.isRoot()) {
+    		showRootUI();
+    	} else if (activeUser.isAdministrator()) {
+    		showAdministratorUI();
+    	} else if (activeUser.isTeacher()) {
+    		showTeacherUI();
+    	} else if (activeUser.isStudent()) {
+    		showStudentUI();
+    	}
+    }
+    
+    private void showRootUI() {
+    	while (activeUser != null) {
+    		switch (getRootMenuSelection()) {
+            case 1: rootResetPassword(); break;
+            case 2: factoryReset(); break;
+            case 3: logout(); break;
+            case 4: shutdown(); break;
+            default: System.out.println("\nInvalid selection."); break;
+        	}
+    	}
+    }
+    
+    private void showAdministratorUI() {
+    	while (activeUser != null) {
+ 			switch (administratorSelection()) {
+ 			case 1: faculty(); break;
+ 			case 2: facultyByDepartment(); break;
+ 			case 3: studentEnrollment(); break;
+ 			case 4: studentEnrollmentbyGrade(); break;
+ 			case 5: studentEnrollmentbyCourse(); break;
+ 			case 6: resetPassword(); break;
+ 			case 7: logout(); break;
+ 			default: System.out.println("\nInvalid selection. \n"); break;
+ 			}
+         }
+    }
 
     public static void main(String[] args) {
         Application app = new Application();
