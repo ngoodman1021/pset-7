@@ -14,7 +14,7 @@ public class Administrator extends User {
     private String jobTitle;
 	
     public Administrator(User user, ResultSet rs) throws SQLException{
-	super(rs);
+	super(user);
 	    
 	this.administratorId = rs.getInt("administrator_id");
     	this.firstName = rs.getString("first_name");
@@ -22,7 +22,7 @@ public class Administrator extends User {
     	this.jobTitle = rs.getString("job_title");
     }
 	
-    ublic int getAdministratorId() {
+    public int getAdministratorId() {
     	return administratorId;
     }
     
