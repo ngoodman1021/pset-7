@@ -872,38 +872,6 @@ public class Application {
     	}
     }
     
-    public void message() {
-    	System.out.println("         ________");
-    	System.out.println("       /          \\");
-    	System.out.println("      /  __    __  \\");
-    	System.out.println("     |--|__|  |__|--|");
-    	System.out.println("     |              |");
-    	System.out.println("     |       +      |");
-    	System.out.println("      \\    \\__/    /");
-    	System.out.println("       \\          /");
-    	System.out.println("         ________");
-    	System.out.println("             |");
-    	System.out.println("             |");
-    	System.out.println("            /|\\");
-    	System.out.println("           / | \\");
-    	System.out.println("          /  |  \\");
-    	System.out.println("         /   |   \\");
-    	System.out.println("        /    |   _\\_");
-    	System.out.println("             | _|___|__");
-    	System.out.println("             || Wilson |");
-    	System.out.println("             ||________|");
-    	System.out.println("             |");
-    	System.out.println("            / \\");
-    	System.out.println("           /   \\");
-    	System.out.println("          /     \\");
-    	System.out.println("         /       \\");
-    	System.out.println("        /         \\");
-    	
-    	System.out.println("\nHello Mr. Wilson. \n\nLooks like you found my easter egg, yayy.\n"
-    			+ "I think becuase I worked on this pset by myself AND I drew this beautiful picture of you (shown above),"
-    			+ "\nI should get extra credit.\nThank you!\n");
-    }
-    
     public void courseGrades() {
     	int studentId = PowerSchool.getStudentIdByUserId(activeUser);
     	ArrayList<Integer> courseIds = PowerSchool.getCourseId(studentId);
